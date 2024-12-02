@@ -29,7 +29,7 @@ RUN curl -Lo /usr/local/bin/bazel https://github.com/bazelbuild/bazelisk/release
 RUN bazel --version
 
 #Install protobuf
-RUN curl -SL https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOBUF_VERSION}/protobuf-${PROTOBUF_VERSION}.tar.gz | tar -xvzfC /opt && \
+RUN curl -SL https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOBUF_VERSION}/protobuf-${PROTOBUF_VERSION}.tar.gz | tar -zxC /opt && \
     cd /opt/protobuf-${PROTOBUF_VERSION} && \
     bazel build :protoc :protobuf && \
     cp bazel-bin/protoc /usr/local/bin
