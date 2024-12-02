@@ -19,8 +19,18 @@ RUN apt-get update && apt-get install -y \
     g++ \ 
     git \
     tar \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    python3 \
+    python3-dev \
+    python3-pip \
+    python3-setuptools && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+#setup python
+RUN cd /usr/local/bin && \
+    ln -s /usr/bin/python3 python && \
+    ln -s /usr/bin/pip3 pip && \
+    pip install --upgrade pip setuptools wheel
 
 #Install bazel
 RUN curl -Lo /usr/local/bin/bazel https://github.com/bazelbuild/bazelisk/releases/download/v${BAZEL_VERSION}/bazelisk-linux-${TARGETARCH} && \
