@@ -1,0 +1,11 @@
+
+cc_proto_library(
+  name = "point_cc_proto",
+  deps = [":point"],
+  visibility = ["//visibility:public"],
+)
+
+proto_library(
+  name = "point",
+  srcs = ["point.proto"],
+)
