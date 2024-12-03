@@ -68,5 +68,4 @@ bazel-*
 /.aswb/
 /.clwb/
 MODULE.bazel.lock
-MODULE.bazel
 # End of https://www.toptal.com/developers/gitignore/api/bazel
