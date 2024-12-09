@@ -1,5 +1,11 @@
+cc_library(
+    name = "list_people_lib",
+    deps = ["list_people"],
+    visibility = ["//visibility:public"],  # Make the target visible to all packages
+)
+
 cc_binary(
-    name = "hello_world",
-    srcs = ["main.cpp"],
+    name = "list_people",
+    srcs = ["main.cpp", "list_people.cpp", "list_people.hpp"],
     deps = ["@my_protos//:point_cc_proto"],
 )

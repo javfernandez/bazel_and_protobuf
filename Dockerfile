@@ -35,7 +35,6 @@ RUN cd /usr/local/bin && \
 #Install bazel
 RUN curl -Lo /usr/local/bin/bazel https://github.com/bazelbuild/bazelisk/releases/download/v${BAZEL_VERSION}/bazelisk-linux-${TARGETARCH} && \
     chmod +x /usr/local/bin/bazel
-
 RUN bazel --version
 
 #Install protobuf
